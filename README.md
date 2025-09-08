@@ -163,7 +163,7 @@ Clicking a tree name on a card opens a modal with full tree details.
 
 
 ## 🔗 Submission
-- **Live Link :** YOUR_DEPLOYED_URL_HERE  
+- **Live Link :** (https://nayeem-94.github.io/assignment_6/)  
 - **GitHub Private Repository:** YOUR_REPO_URL_HERE  
 
 ---
