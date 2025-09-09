@@ -31,6 +31,14 @@ const trig = document.getElementById("allOne");
 trig.addEventListener("click", function () {
     const url = "https://openapi.programming-hero.com/api/plants";
     loadTrees(url);
+    for (let j = 0; j < allCatagory.length; j++) {
+        allCatagory[j].classList.remove("bg-green-600");
+        allCatagory[j].classList.remove("text-white");
+    }
+
+    // Add active class to the clicked category
+    allCatagory[0].classList.add("bg-green-600");
+    allCatagory[0].classList.add("text-white");
 });
 
 
@@ -40,6 +48,7 @@ for (let i = 0; i < allCatagory.length; i++) {
     if (i == 0) {
         const url = "https://openapi.programming-hero.com/api/plants";
         loadTrees(url);
+
     }
     else {
 
@@ -48,6 +57,16 @@ for (let i = 0; i < allCatagory.length; i++) {
             // const url = "https://openapi.programming-hero.com/api/category/i";
             const url = `https://openapi.programming-hero.com/api/category/${i}`;
             loadTrees(url)
+
+            // Remove active class from all categories
+            for (let j = 0; j < allCatagory.length; j++) {
+                allCatagory[j].classList.remove("bg-green-600");
+                allCatagory[j].classList.remove("text-white");
+            }
+
+            // Add active class to the clicked category
+            allCatagory[i].classList.add("bg-green-600");
+            allCatagory[i].classList.add("text-white");
         });
 
     }
