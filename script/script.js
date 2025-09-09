@@ -1,7 +1,7 @@
 console.log("hello world");
 
-const loadTrees = async () => {
-    const url = "https://openapi.programming-hero.com/api/plants";
+const loadTrees = async (url) => {
+    // const url = "https://openapi.programming-hero.com/api/plants";
     fetch(url)
         .then(res => res.json())
         .then(data => displayTrees(data.plants));
@@ -25,5 +25,35 @@ const displayTrees = (data) => {
         treeContainer.appendChild(treeCard);
     });
 }
-loadTrees();
+
+
+const trig = document.getElementById("allOne");
+trig.addEventListener("click", function () {
+    const url = "https://openapi.programming-hero.com/api/plants";
+    loadTrees(url);
+});
+
+
+const allCatagory = document.getElementsByClassName("catagory");
+for (let i = 0; i < allCatagory.length; i++) {
+    //   console.log(allCatagory[i]);
+    if (i == 0) {
+        const url = "https://openapi.programming-hero.com/api/plants";
+        loadTrees(url);
+    }
+    else {
+
+
+        allCatagory[i].addEventListener("click", function () {
+            // const url = "https://openapi.programming-hero.com/api/category/i";
+            const url = `https://openapi.programming-hero.com/api/category/${i}`;
+            loadTrees(url)
+        });
+
+    }
+
+
+
+
+}
 
